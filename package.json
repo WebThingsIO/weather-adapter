@@ -1,0 +1,124 @@
+{
+  "name": "weather-adapter",
+  "display_name": "Weather",
+  "version": "0.0.1",
+  "description": "Current weather conditions",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozilla-iot/weather-adapter.git"
+  },
+  "keywords": [
+    "mozilla",
+    "iot",
+    "adapter",
+    "weather"
+  ],
+  "author": "Mozilla IoT",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/mozilla-iot/weather-adapter/issues"
+  },
+  "homepage": "https://github.com/mozilla-iot/weather-adapter#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0"
+  },
+  "files": [
+    "LICENSE",
+    "SHA256SUMS",
+    "index.js",
+    "lib/provider/accuweather.js",
+    "lib/provider/darksky.js",
+    "lib/provider/openweathermap.js",
+    "lib/provider/provider.js",
+    "lib/weather-adapter.js",
+    "lib/weather-device.js",
+    "lib/weather-property.js",
+    "node_modules"
+  ],
+  "moziot": {
+    "api": {
+      "min": 2,
+      "max": 2
+    },
+    "plugin": true,
+    "exec": "{nodeLoader} {path}",
+    "config": {
+      "locations": [],
+      "units": "imperial",
+      "provider": "openweathermap",
+      "apiKey": "",
+      "pollInterval": 60
+    },
+    "schema": {
+      "type": "object",
+      "required": [
+        "locations",
+        "units",
+        "provider",
+        "apiKey",
+        "pollInterval"
+      ],
+      "properties": {
+        "locations": {
+          "description": "List of locations",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "latitude",
+              "longitude"
+            ],
+            "properties": {
+              "name": {
+                "description": "Name of location",
+                "type": "string"
+              },
+              "latitude": {
+                "description": "Latitude of location",
+                "type": "number"
+              },
+              "longitude": {
+                "description": "Longitude of location",
+                "type": "number"
+              }
+            }
+          }
+        },
+        "units": {
+          "description": "Units to use, i.e. imperial for ˚F, metric for ˚C",
+          "type": "string",
+          "enum": [
+            "metric",
+            "imperial"
+          ]
+        },
+        "provider": {
+          "description": "Weather data provider to use",
+          "type": "string",
+          "enum": [
+            "openweathermap",
+            "darksky",
+            "accuweather"
+          ]
+        },
+        "apiKey": {
+          "description": "API key for the selected provider",
+          "type": "string"
+        },
+        "pollInterval": {
+          "description": "Interval in minutes at which to poll the provider",
+          "type": "integer",
+          "minimum": 10
+        }
+      }
+    }
+  }
+}
