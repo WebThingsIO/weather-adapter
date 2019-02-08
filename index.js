@@ -6,12 +6,12 @@ module.exports = (addonManager, manifest, errorCallback) => {
   const config = manifest.moziot.config;
 
   if (!config.apiKey) {
-    errorCallback('API key must be set!');
+    errorCallback(manifest.name, 'API key must be set!');
     return;
   }
 
   if (!config.locations || config.locations.length === 0) {
-    errorCallback('No locations configured.');
+    errorCallback(manifest.name, 'No locations configured.');
     return;
   }
 
