@@ -1,7 +1,7 @@
 {
   "name": "weather-adapter",
   "display_name": "Weather",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Current weather conditions",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "node-fetch": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^5.13.0"
+    "eslint": "^5.15.0"
   },
   "files": [
     "LICENSE",
