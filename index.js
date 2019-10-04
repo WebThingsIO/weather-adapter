@@ -1,19 +1,26 @@
 'use strict';
 
+const {Database} = require('gateway-addon');
+const manifest = require('./manifest.json');
 const WeatherAdapter = require('./lib/weather-adapter');
 
-module.exports = (addonManager, manifest, errorCallback) => {
-  const config = manifest.moziot.config;
+module.exports = (addonManager, _, errorCallback) => {
+  const db = new Database(manifest.id);
+  db.open().then(() => {
+    return db.loadConfig();
+  }).then((config) => {
+    if (!config.apiKey) {
+      errorCallback(manifest.id, 'API key must be set!');
+      return;
+    }
 
-  if (!config.apiKey) {
-    errorCallback(manifest.name, 'API key must be set!');
-    return;
-  }
+    if (!config.locations || config.locations.length === 0) {
+      errorCallback(manifest.id, 'No locations configured.');
+      return;
+    }
 
-  if (!config.locations || config.locations.length === 0) {
-    errorCallback(manifest.name, 'No locations configured.');
-    return;
-  }
-
-  new WeatherAdapter(addonManager, manifest);
+    new WeatherAdapter(addonManager, config);
+  }).catch((e) => {
+    errorCallback(manifest.id, e);
+  });
 };
