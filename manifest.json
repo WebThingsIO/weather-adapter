@@ -1,58 +1,21 @@
 {
-  "name": "weather-adapter",
-  "display_name": "Weather",
-  "version": "0.3.0",
-  "description": "Current weather conditions",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mozilla-iot/weather-adapter.git"
-  },
-  "keywords": [
-    "mozilla",
-    "iot",
-    "adapter",
-    "weather"
-  ],
   "author": "Mozilla IoT",
+  "description": "Current weather conditions",
+  "gateway_specific_settings": {
+    "webthings": {
+      "exec": "{nodeLoader} {path}",
+      "primary_type": "adapter",
+      "strict_max_version": "*",
+      "strict_min_version": "0.10.0"
+    }
+  },
+  "homepage_url": "https://github.com/mozilla-iot/weather-adapter#readme",
+  "id": "weather-adapter",
   "license": "MPL-2.0",
-  "bugs": {
-    "url": "https://github.com/mozilla-iot/weather-adapter/issues"
-  },
-  "homepage": "https://github.com/mozilla-iot/weather-adapter#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1"
-  },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "SHA256SUMS",
-    "index.js",
-    "lib/provider/accuweather.js",
-    "lib/provider/darksky.js",
-    "lib/provider/openweathermap.js",
-    "lib/provider/provider.js",
-    "lib/weather-adapter.js",
-    "lib/weather-device.js",
-    "lib/weather-property.js",
-    "manifest.json",
-    "node_modules"
-  ],
-  "moziot": {
-    "api": {
-      "min": 2,
-      "max": 2
-    },
-    "plugin": true,
-    "exec": "{nodeLoader} {path}",
-    "config": {
+  "manifest_version": 1,
+  "name": "Weather",
+  "options": {
+    "default": {
       "locations": [],
       "units": "imperial",
       "provider": "openweathermap",
@@ -96,7 +59,7 @@
           }
         },
         "units": {
-          "description": "Units to use, i.e. imperial for ˚F, metric for ˚C",
+          "description": "Units to use, i.e. imperial for \u02daF, metric for \u02daC",
           "type": "string",
           "enum": [
             "metric",
@@ -123,5 +86,7 @@
         }
       }
     }
-  }
+  },
+  "short_name": "Weather",
+  "version": "0.3.0"
 }
