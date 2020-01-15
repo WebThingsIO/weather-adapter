@@ -19,6 +19,7 @@
       "locations": [],
       "units": "imperial",
       "provider": "openweathermap",
+      "useDefaultOpenWeatherMapApiKey": true,
       "apiKey": "",
       "pollInterval": 60
     },
@@ -28,11 +29,11 @@
         "locations",
         "units",
         "provider",
-        "apiKey",
         "pollInterval"
       ],
       "properties": {
         "locations": {
+          "title": "Locations",
           "description": "List of locations",
           "type": "array",
           "items": {
@@ -44,14 +45,17 @@
             ],
             "properties": {
               "name": {
+                "title": "Name",
                 "description": "Name of location",
                 "type": "string"
               },
               "latitude": {
+                "title": "Latitude",
                 "description": "Latitude of location",
                 "type": "number"
               },
               "longitude": {
+                "title": "Longitude",
                 "description": "Longitude of location",
                 "type": "number"
               }
@@ -59,6 +63,7 @@
           }
         },
         "units": {
+          "title": "Units",
           "description": "Units to use, i.e. imperial for \u02daF, metric for \u02daC",
           "type": "string",
           "enum": [
@@ -67,6 +72,7 @@
           ]
         },
         "provider": {
+          "title": "Provider",
           "description": "Weather data provider to use",
           "type": "string",
           "enum": [
@@ -75,11 +81,18 @@
             "accuweather"
           ]
         },
+        "useDefaultOpenWeatherMapApiKey": {
+          "title": "Use Default OpenWeatherMap API Key",
+          "description": "If enabled, polling will be limited to once per hour",
+          "type": "boolean"
+        },
         "apiKey": {
+          "title": "API Key",
           "description": "API key for the selected provider",
           "type": "string"
         },
         "pollInterval": {
+          "title": "Poll Interval",
           "description": "Interval in minutes at which to poll the provider",
           "type": "integer",
           "minimum": 10
@@ -88,5 +101,5 @@
     }
   },
   "short_name": "Weather",
-  "version": "0.3.0"
+  "version": "0.4.0"
 }

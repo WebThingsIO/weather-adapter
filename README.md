@@ -4,7 +4,8 @@ Weather adapter for the [Mozilla WebThings Gateway](https://iot.mozilla.org).
 
 ## Usage
 
-Normally you will just want to install this from the add-ons list provided by the gateway.
+Normally you will just want to install this from the add-ons list provided by
+the gateway.
 
 ## Weather Data Providers
 
@@ -12,8 +13,13 @@ Normally you will just want to install this from the add-ons list provided by th
 
 #### API Key
 
+There is a default key available for OWM. However, you will be capped at one
+update per hour. If you'd like to set up your own key, follow the instructions
+below.
+
 * Register for a new account [here](http://openweathermap.org/register).
-* Browse [here](https://home.openweathermap.org/api_keys) and copy your API key (or generate a new one).
+* Browse [here](https://home.openweathermap.org/api_keys) and copy your API key
+  (or generate a new one).
 * You may have to wait a couple hours until your API key becomes active.
 
 #### Limits
@@ -37,8 +43,10 @@ See [here](https://darksky.net/dev/docs/faq#cost).
 
 * Register for a new account [here](https://developer.accuweather.com/user/register).
 * Browse [here](https://developer.accuweather.com/user/me/apps).
-* Click "Add a new app" and fill out the form. The fields probably don't matter much. Then click "Create App".
-* After the form submits, click on the name of the app you just created and copy your API key.
+* Click "Add a new app" and fill out the form. The fields probably don't matter
+  much. Then click "Create App".
+* After the form submits, click on the name of the app you just created and
+  copy your API key.
 
 #### Limits
 

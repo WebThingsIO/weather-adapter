@@ -9,7 +9,12 @@ module.exports = (addonManager, _, errorCallback) => {
   db.open().then(() => {
     return db.loadConfig();
   }).then((config) => {
-    if (!config.apiKey) {
+    if (config.provider === 'openweathermap') {
+      if (!(config.useDefaultOpenWeatherMapApiKey || config.apiKey)) {
+        errorCallback(manifest.id, 'API key must be set!');
+        return;
+      }
+    } else if (!config.apiKey) {
       errorCallback(manifest.id, 'API key must be set!');
       return;
     }
