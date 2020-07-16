@@ -27,8 +27,8 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.8.0"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.4.0"
   },
   "files": [
     "LICENSE",
