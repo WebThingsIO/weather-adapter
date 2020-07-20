@@ -1,7 +1,6 @@
 {
   "name": "weather-adapter",
-  "display_name": "Weather",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Current weather conditions",
   "main": "index.js",
   "scripts": {
@@ -11,12 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/mozilla-iot/weather-adapter.git"
   },
-  "keywords": [
-    "mozilla",
-    "iot",
-    "adapter",
-    "weather"
-  ],
   "author": "Mozilla IoT",
   "license": "MPL-2.0",
   "bugs": {
@@ -28,7 +21,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0"
+    "eslint": "^7.5.0"
   },
   "files": [
     "LICENSE",
@@ -44,97 +37,5 @@
     "lib/weather-property.js",
     "manifest.json",
     "node_modules"
-  ],
-  "moziot": {
-    "api": {
-      "min": 2,
-      "max": 2
-    },
-    "plugin": true,
-    "exec": "{nodeLoader} {path}",
-    "config": {
-      "locations": [],
-      "units": "imperial",
-      "provider": "openweathermap",
-      "useDefaultOpenWeatherMapApiKey": true,
-      "apiKey": "",
-      "pollInterval": 60
-    },
-    "schema": {
-      "type": "object",
-      "required": [
-        "locations",
-        "units",
-        "provider",
-        "pollInterval"
-      ],
-      "properties": {
-        "locations": {
-          "title": "Locations",
-          "description": "List of locations",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": [
-              "name",
-              "latitude",
-              "longitude"
-            ],
-            "properties": {
-              "name": {
-                "title": "Name",
-                "description": "Name of location",
-                "type": "string"
-              },
-              "latitude": {
-                "title": "Latitude",
-                "description": "Latitude of location",
-                "type": "number"
-              },
-              "longitude": {
-                "title": "Longitude",
-                "description": "Longitude of location",
-                "type": "number"
-              }
-            }
-          }
-        },
-        "units": {
-          "title": "Units",
-          "description": "Units to use, i.e. imperial for ˚F, metric for ˚C",
-          "type": "string",
-          "enum": [
-            "metric",
-            "imperial"
-          ]
-        },
-        "provider": {
-          "title": "Provider",
-          "description": "Weather data provider to use",
-          "type": "string",
-          "enum": [
-            "openweathermap",
-            "darksky",
-            "accuweather"
-          ]
-        },
-        "useDefaultOpenWeatherMapApiKey": {
-          "title": "Use Default OpenWeatherMap API Key",
-          "description": "If enabled, polling will be limited to once per hour",
-          "type": "boolean"
-        },
-        "apiKey": {
-          "title": "API Key",
-          "description": "API key for the selected provider",
-          "type": "string"
-        },
-        "pollInterval": {
-          "title": "Poll Interval",
-          "description": "Interval in minutes at which to poll the provider",
-          "type": "integer",
-          "minimum": 10
-        }
-      }
-    }
-  }
+  ]
 }
