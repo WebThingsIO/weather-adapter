@@ -1,5 +1,5 @@
 {
-  "author": "Mozilla IoT",
+  "author": "WebThingsIO",
   "description": "Current weather conditions",
   "gateway_specific_settings": {
     "webthings": {
@@ -9,7 +9,7 @@
       "strict_min_version": "0.10.0"
     }
   },
-  "homepage_url": "https://github.com/mozilla-iot/weather-adapter#readme",
+  "homepage_url": "https://github.com/WebThingsIO/weather-adapter#readme",
   "id": "weather-adapter",
   "license": "MPL-2.0",
   "manifest_version": 1,
@@ -101,5 +101,5 @@
     }
   },
   "short_name": "Weather",
-  "version": "0.5.1"
+  "version": "0.5.2"
 }

@@ -1,6 +1,6 @@
 # weather-adapter
 
-Weather adapter for the [Mozilla WebThings Gateway](https://iot.mozilla.org).
+Weather adapter for the [WebThings Gateway](https://github.com/WebThingsIO/gateway).
 
 ## Usage
 
