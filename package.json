@@ -1,6 +1,6 @@
 {
   "name": "weather-adapter",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Current weather conditions",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.10.0"
+    "eslint": "^7.17.0"
   },
   "files": [
     "LICENSE",
@@ -32,6 +32,7 @@
     "lib/provider/darksky.js",
     "lib/provider/openweathermap.js",
     "lib/provider/provider.js",
+    "lib/provider/wunderground.js",
     "lib/weather-adapter.js",
     "lib/weather-device.js",
     "lib/weather-property.js",

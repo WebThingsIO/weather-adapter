@@ -18,7 +18,7 @@
     "default": {
       "locations": [],
       "units": "imperial",
-      "provider": "openweathermap",
+      "provider": "OpenWeatherMap",
       "useDefaultOpenWeatherMapApiKey": true,
       "apiKey": "",
       "pollInterval": 60
@@ -76,9 +76,10 @@
           "description": "Weather data provider to use",
           "type": "string",
           "enum": [
-            "openweathermap",
-            "darksky",
-            "accuweather"
+            "OpenWeatherMap",
+            "DarkSky",
+            "AccuWeather",
+            "WeatherUnderground"
           ]
         },
         "useDefaultOpenWeatherMapApiKey": {
@@ -101,5 +102,5 @@
     }
   },
   "short_name": "Weather",
-  "version": "0.5.2"
+  "version": "0.6.0"
 }

@@ -28,9 +28,13 @@ See [here](https://openweathermap.org/price).
 
 ### Dark Sky
 
+**NOTE:** Dark Sky no longer provides a public API, except to those users who
+already have an existing key. The API will be shut down completely at the end
+of 2021. See [here](https://blog.darksky.net/) for more information.
+
 #### API Key
 
-* Register for a new account [here](https://darksky.net/dev/register).
+* ~~Register for a new account [here](https://darksky.net/dev/register).~~
 * Browse [here](https://darksky.net/dev/account) and copy your secret key.
 
 #### Limits
@@ -51,3 +55,17 @@ See [here](https://darksky.net/dev/docs/faq#cost).
 #### Limits
 
 See [here](https://developer.accuweather.com/packages).
+
+### Weather Underground
+
+**NOTE:** The Weather Underground API is only available to contributors who
+have their own Personal Weather Station (PWS).
+
+#### API Key
+
+* Browse [here](https://www.wunderground.com/member/api-keys) and copy your API
+  key (or generate a new one).
+
+#### Limits
+
+See note above.
